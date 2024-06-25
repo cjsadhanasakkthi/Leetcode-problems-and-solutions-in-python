@@ -1,0 +1,56 @@
+Write a program to print the following output for the given input. You can assume the string is of odd length
+
+Eg 1: Input: 12345
+       Output:
+1       5
+  2   4
+    3
+  2  4
+1      5
+Eg 2: Input: geeksforgeeks
+         Output:
+g                         s
+  e                     k
+    e                 e
+      k             e
+        s         g
+          f      r
+             o
+          f     r
+        s         g
+      k             e
+    e                 e
+  e                      k
+g                          s 
+
+
+public class DiagonalPattern {
+
+    public static void printDiagonalPattern(String input) {
+        int length = input.length();
+        int middle = length / 2;
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (j == i) {
+                    System.out.print(input.charAt(i));
+                } else if (j == length - i - 1) {
+                    System.out.print(input.charAt(length - i - 1));
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        String input1 = "12345";
+        printDiagonalPattern(input1);
+
+        System.out.println();
+
+        String input2 = "geeksforgeeks";
+        printDiagonalPattern(input2);
+    }
+}
